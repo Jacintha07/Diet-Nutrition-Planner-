@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Profile</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="profile-card">
+
+        <div class="profile-header">
+
+            <i class="fa-solid fa-circle-user profile-icon"></i>
+
+            <h1>My Profile</h1>
+
+            <p>Your Account Information</p>
+
+        </div>
+
+        <table>
+
+            <tr>
+                <td><i class="fa-solid fa-user"></i> Full Name</td>
+                <td>{{ user[0] }}</td>
+            </tr>
+
+            <tr>
+                <td><i class="fa-solid fa-envelope"></i> Email</td>
+                <td>{{ user[1] }}</td>
+            </tr>
+
+            <tr>
+                <td><i class="fa-solid fa-phone"></i> Phone</td>
+                <td>{{ user[2] }}</td>
+            </tr>
+
+            <tr>
+                <td><i class="fa-solid fa-venus-mars"></i> Gender</td>
+                <td>{{ user[3] }}</td>
+            </tr>
+
+            <tr>
+                <td><i class="fa-solid fa-calendar"></i> Age</td>
+                <td>{{ user[4] }}</td>
+            </tr>
+
+            <tr>
+                <td><i class="fa-solid fa-ruler-vertical"></i> Height</td>
+                <td>{{ user[5] }} cm</td>
+            </tr>
+
+            <tr>
+                <td><i class="fa-solid fa-weight-scale"></i> Weight</td>
+                <td>{{ user[6] }} kg</td>
+            </tr>
+
+            <tr>
+                <td><i class="fa-solid fa-bullseye"></i> Goal</td>
+                <td>{{ user[7] }}</td>
+            </tr>
+
+        </table>
+
+        <div class="buttons">
+
+            <a href="/dashboard" class="btn">Back to Dashboard</a>
+
+            <a href="/logout" class="logout-btn">Logout</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

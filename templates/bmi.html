@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BMI Calculator</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bmi.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="box">
+
+<h1>BMI Calculator</h1>
+
+<form method="POST">
+
+<input type="number" name="height" placeholder="Height (cm)" required>
+
+<input type="number" name="weight" placeholder="Weight (kg)" required>
+
+<button type="submit">Calculate BMI</button>
+
+</form>
+
+{% if bmi %}
+
+<div class="result">
+
+<h2>Your BMI : {{ bmi }}</h2>
+
+<h3>Category : {{ category }}</h3>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</body>
+
+</html>

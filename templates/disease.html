@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Food Guidance</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/disease.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="diet-box">
+
+        <h1>🤖 AI Food Guidance</h1>
+
+        <p>
+            Get general food guidance based on your health condition
+            and personal preferences.
+        </p>
+
+        <form method="POST">
+
+            <label>Health Condition</label>
+
+            <select name="disease" required>
+                <option value="">-- Select Condition --</option>
+                <option value="Diabetes">Diabetes</option>
+                <option value="Hypertension">Hypertension</option>
+                <option value="Obesity">Obesity</option>
+                <option value="Heart Disease">Heart Disease</option>
+                <option value="High Cholesterol">High Cholesterol</option>
+                <option value="PCOS">PCOS</option>
+                <option value="Anemia">Anemia</option>
+                <option value="Fatty Liver">Fatty Liver</option>
+            </select>
+
+
+            <label>Age</label>
+
+            <input
+                type="number"
+                name="age"
+                placeholder="Enter your age"
+                min="1"
+                max="120"
+                required
+            >
+
+
+            <label>Food Preference</label>
+
+            <select name="preference" required>
+
+                <option value="">-- Select Preference --</option>
+
+                <option value="Vegetarian">
+                    Vegetarian
+                </option>
+
+                <option value="Non-Vegetarian">
+                    Non-Vegetarian
+                </option>
+
+                <option value="Vegan">
+                    Vegan
+                </option>
+
+            </select>
+
+
+            <label>Goal</label>
+
+            <select name="goal" required>
+
+                <option value="">-- Select Goal --</option>
+
+                <option value="Weight Management">
+                    Weight Management
+                </option>
+
+                <option value="Healthy Eating">
+                    Healthy Eating
+                </option>
+
+                <option value="General Fitness">
+                    General Fitness
+                </option>
+
+            </select>
+
+
+            <button type="submit">
+                🤖 Generate Food Guidance
+            </button>
+
+        </form>
+
+
+        {% if guidance %}
+
+        <div class="result">
+
+            <h2>AI-Generated General Food Guidance</h2>
+
+            <p>
+                {{ guidance }}
+            </p>
+
+        </div>
+
+        {% endif %}
+
+
+        <div class="warning">
+
+            ⚠️ This provides general nutrition information and is not
+            medical advice. For an individualized diet plan, consult
+            a qualified healthcare professional.
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

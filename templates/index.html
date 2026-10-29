@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet & Nutrition Planner</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Diet Nutrition Planner
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Eat Better. Live Better.</h1>
+
+            <p>
+                Diet & Nutrition Planner with Image-Based Food Recognition
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="/register" class="btn">
+                    Start Your Journey
+                </a>
+
+                <a href="#features" class="btn btn-outline">
+                    Explore Features
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ABOUT SECTION ================= -->
+
+    <section id="about" class="about">
+
+        <div class="about-content">
+
+            <h2>About Our Project</h2>
+
+            <p>
+                Diet & Nutrition Planner is an AI-powered web application
+                developed to help users maintain a healthy lifestyle through
+                personalized diet planning and image-based food recognition.
+            </p>
+
+            <p>
+                The system calculates BMI, provides customized diet
+                recommendations, analyzes nutritional values, and identifies
+                food items using YOLOv8 technology.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FEATURES SECTION ================= -->
+
+    <section id="features" class="features">
+
+        <h2>Why Choose Our Platform?</h2>
+
+        <div class="feature-container">
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-utensils"></i>
+
+                <h3>Diet Planner</h3>
+
+                <p>
+                    Personalized meal plans based on your health goals.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-camera"></i>
+
+                <h3>Food Recognition</h3>
+
+                <p>
+                    Detect food items instantly using YOLOv8 image recognition.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                <h3>Nutrition Analysis</h3>
+
+                <p>
+                    View calories, protein, carbohydrates and fat information.
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <i class="fa-solid fa-heart-pulse"></i>
+
+                <h3>BMI Tracker</h3>
+
+                <p>
+                    Calculate your BMI and monitor your health status.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Diet & Nutrition Planner. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

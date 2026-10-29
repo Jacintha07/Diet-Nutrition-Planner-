@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reminder | Diet Nutrition Planner</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reminder.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="reminder-box">
+
+        <h2>⏰ Daily Health Reminder</h2>
+
+        <p>Set your daily health reminder.</p>
+
+        <div class="input-box">
+
+            <label>Reminder</label>
+
+            <select id="message">
+
+                <option>💧 Drink Water</option>
+                <option>🍎 Eat Healthy Food</option>
+                <option>🏃 Exercise Time</option>
+                <option>🥗 Lunch Time</option>
+                <option>🍽 Dinner Time</option>
+
+            </select>
+
+        </div>
+
+        <div class="input-box">
+
+            <label>Time</label>
+
+            <input type="time" id="time">
+
+        </div>
+
+        <button onclick="saveReminder()">
+            Save Reminder
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function saveReminder(){
+
+    let reminder=document.getElementById("message").value;
+    let time=document.getElementById("time").value;
+
+    alert("Reminder Saved!");
+
+    setInterval(function(){
+
+        let now=new Date();
+
+        let current=now.getHours().toString().padStart(2,"0")+":"+
+                    now.getMinutes().toString().padStart(2,"0");
+
+        if(current===time){
+
+            if(Notification.permission==="granted"){
+
+                new Notification(reminder);
+
+            }
+
+        }
+
+    },1000);
+
+}
+
+if(Notification.permission!=="granted"){
+
+    Notification.requestPermission();
+
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Water Intake Tracking</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/water.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="water-box">
+
+        <h1>💧 Water Intake Tracking</h1>
+
+        <p>Calculate your recommended daily water intake.</p>
+
+        <form method="POST">
+
+            <label>Enter Your Weight</label>
+
+            <input
+                type="number"
+                name="weight"
+                placeholder="Weight in kg"
+                min="1"
+                step="0.1"
+                required
+            >
+
+            <button type="submit">
+                Calculate Water Intake
+            </button>
+
+        </form>
+
+
+        {% if water %}
+
+        <div class="result">
+
+            <h2>Daily Water Recommendation</h2>
+
+            <div class="water-value">
+                💧 {{ water }} Litres / Day
+            </div>
+
+            <p>
+                Based on your body weight, this is your recommended
+                daily water intake.
+            </p>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Food Image Upload</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="upload-box">
+
+<h1>🍽 Food Image Upload</h1>
+
+<p>Select a food image to upload.</p>
+
+<form method="POST" enctype="multipart/form-data">
+
+<input type="file" name="image" required>
+
+<br><br>
+
+<label>Meal Type:</label>
+
+<select name="meal_type" required>
+
+<option value="">Select Meal</option>
+<option value="Breakfast">Breakfast</option>
+<option value="Lunch">Lunch</option>
+<option value="Snack">Snack</option>
+<option value="Dinner">Dinner</option>
+
+</select>
+
+<br><br>
+
+<label>Quantity:</label>
+
+<input type="number" name="quantity" value="1" min="0.1" step="0.1" required>
+
+<br><br>
+
+<button type="submit">Upload Image</button>
+
+</form>
+
+{% if filename %}
+
+<div class="preview">
+
+<h3>Uploaded Image</h3>
+
+<img src="{{ url_for('static', filename='uploads/' + filename) }}" width="300">
+
+{% if detected_food %}
+
+<div class="result">
+
+<h2>🤖 Detected Food</h2>
+
+<h3>{{ detected_food }}</h3>
+
+{% if nutrition %}
+
+<hr>
+
+<h3>🥗 Nutrition Information</h3>
+
+<p><strong>Calories:</strong> {{ nutrition.Calories }}</p>
+
+<p><strong>Protein:</strong> {{ nutrition.Protein }}</p>
+
+<p><strong>Carbohydrates:</strong> {{ nutrition.Carbohydrates }}</p>
+
+<p><strong>Fat:</strong> {{ nutrition.Fat }}</p>
+
+{% endif %}
+
+</div>
+
+{% endif %}
+
+{% endif %}
+
+</div>
+
+</div>
+
+</body>
+
+</html>
