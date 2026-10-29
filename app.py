@@ -2,9 +2,6 @@ from ultralytics import YOLO
 import os
 from flask import Flask, render_template, request, redirect, session
 from flask_mysqldb import MySQL
-from openai import OpenAI
-
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 app = Flask(__name__)
 app.secret_key = "diet and nutrition _planner123"
