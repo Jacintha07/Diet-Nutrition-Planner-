@@ -3,16 +3,15 @@
 A Flask web application that detects food items from images using YOLOv8 and provides diet and nutrition recommendations.
 
 ## Features
-- Upload a food image and detect the food item using YOLOv8
-- Get nutrition information for the detected food
-- Get diet suggestions based on the result
+- Upload a food image and recognize the food item using YOLOv8
+- Displays nutrition details: calories, protein, carbs and fat
+- BMI calculator and daily calorie calculator
+- Rule-based diet suggestions based on the user's details
 - Simple web interface built with Flask
-
 ## Tech Stack
 - Python
 - Flask
 - YOLOv8 (Ultralytics)
-- OpenCV
 - HTML, CSS (templates and static)
 
 ## Project Structure
